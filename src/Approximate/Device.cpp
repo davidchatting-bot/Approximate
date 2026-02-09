@@ -142,7 +142,7 @@ int Device::getRSSI(bool uploadOnly) {
     if(uploadOnly) result = isUploading() ? rssi : APPROXIMATE_UNKNOWN_RSSI;
     else result = rssi;
 
-    return(rssi);
+    return(result);
 }
 
 void Device::setLastSeenAtMs(long lastSeenAtMs) {
@@ -218,9 +218,9 @@ bool Device::isIndividual() {
 //Universal/local and individual/group defined by: https://standards.ieee.org/content/dam/ieee-standards/standards/web/documents/tutorials/macgrp.pdf
 
 bool Device::isLocal() {
-    return((macAddress.addr[0] & 0x2 == 0x2) && !isGroup());
+    return(((macAddress.addr[0] & 0x2) == 0x2) && !isGroup());
 }
 
 bool Device::isGroup() {
-    return(macAddress.addr[0] & 0x1 == 0x1);
+    return((macAddress.addr[0] & 0x1) == 0x1);
 }
