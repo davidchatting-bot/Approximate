@@ -9,13 +9,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Checkout Arduino-List
-      uses: actions/checkout@v4
-      with:
-        repository: davidchatting/Arduino-List
-        ref: master
-        path: CustomListLib
-
     - name: Compile all examples
       uses: ArminJo/arduino-test-compile@master
       with:
@@ -23,4 +16,4 @@ jobs:
         platform-url: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
         arduino-platform: esp32:esp32
         extra-arduino-cli-args: "--warnings default"
-        required-libraries: ArduinoJson,StreamUtils,PubSubClient,AceButton
+        required-libraries: ListLib,ArduinoJson,StreamUtils,PubSubClient,AceButton

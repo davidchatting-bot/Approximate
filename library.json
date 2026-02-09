@@ -24,8 +24,8 @@
   ],
   "dependencies": [
     {
-      "name": "Arduino-List",
-      "version": "https://github.com/davidchatting/Arduino-List.git"
+      "name": "ListLib",
+      "version": "https://github.com/luisllamasbinaburo/Arduino-List.git"
     }
   ],
   "examples": [
