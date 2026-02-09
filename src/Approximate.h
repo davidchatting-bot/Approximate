@@ -110,7 +110,6 @@ class Approximate {
 
     static eth_addr ownMacAddress;
 
-    static eth_addr localBSSID;
     static List<Filter *> activeDeviceFilterList;
     static bool applyDeviceFilters(Device *device);
 

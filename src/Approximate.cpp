@@ -22,7 +22,6 @@ Approximate::ChannelStateHandler Approximate::channelStateHandler = NULL;
 eth_addr Approximate::ownMacAddress = {{0,0,0,0,0,0}};
 
 int Approximate::proximateRSSIThreshold = APPROXIMATE_PERSONAL_RSSI;
-eth_addr Approximate::localBSSID = {{0,0,0,0,0,0}};
 List<Filter *> Approximate::activeDeviceFilterList;
 
 List<Device *> Approximate::proximateDeviceList;
@@ -481,8 +480,7 @@ void Approximate::setLocalBSSID(String macAddress) {
 }
 
 void Approximate::setLocalBSSID(eth_addr &macAddress) {
-  ETHADDR16_COPY(&this -> localBSSID, &macAddress);
-  if(packetSniffer) PacketSniffer::setLocalBSSID(macAddress);
+  PacketSniffer::setLocalBSSID(macAddress);
 }
 
 void Approximate::setActiveDeviceHandler(DeviceHandler activeDeviceHandler, bool inclusive) {
